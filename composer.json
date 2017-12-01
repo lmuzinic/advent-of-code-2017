@@ -1,0 +1,29 @@
+{
+    "name": "lmuzinic/advent-of-code-2017",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luka Muzinic",
+            "email": "luka@muzinic.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "platform": {
+        "php": "7.1"
+    },
+    "require-dev": {
+        "lmuzinic/advent-of-code-bootstrap": "@dev",
+        "symfony/var-dumper": "^4.0"
+    },
+    "autoload": {
+        "psr-4": { "AdventOfCode\\Year2017\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "AdventOfCode\\Year2017\\Tests\\": "tests/" },
+        "files": [
+            "vendor/symfony/var-dumper/Resources/functions/dump.php"
+        ]
+    }
+}
