@@ -11,3 +11,5 @@ First iteration checked first and last element after the loop.
 Wanted to be lazy for second one and just concatenate two inputs together. 
 Length of input always being an even number tipped me into using modulo.  
 
+After discussion with my dear friends, learned that PHP supports negative integers as character positions.
+In that case, checking can even easier `$input[$position] === $input[$position - 1]` and `$input[$position] === $input[$position - $middlePosition]`  
