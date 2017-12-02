@@ -14,9 +14,13 @@ Length of input always being an even number tipped me into using modulo.
 After discussion with my dear friends, learned that PHP supports negative integers as character positions.
 In that case, checking can even easier `$input[$position] === $input[$position - 1]` and `$input[$position] === $input[$position - $middlePosition]`  
 
+### Day 2
+Ugh, loop inside loop. Haven't seen those since high school. Anyways, moved it in the separate method to benefit from early return when divisible is found.
+Starting second loop from next index position so to avoid checking item on itself.
+  
 ## Friends
 List of friends doing Advent of Code 2017
 
 - [Ivan Habunek](https://twitter.com/ihabunek), [closure](https://github.com/ihabunek/aoc2017)
-- Maja, python
+- [Maja Trepsic](https://github.com/majatrepsic), [python](https://github.com/majatrepsic/advent-of-code-2017)
 - [Robert Basic](https://twitter.com/robertbasic), [go](https://github.com/robertbasic/aoc2017/)
