@@ -21,6 +21,6 @@ Starting second loop from next index position so to avoid checking item on itsel
 ## Friends
 List of friends doing Advent of Code 2017
 
-- [Ivan Habunek](https://twitter.com/ihabunek), [closure](https://github.com/ihabunek/aoc2017)
+- [Ivan Habunek](https://twitter.com/ihabunek), [clojure](https://github.com/ihabunek/aoc2017)
 - [Maja Trepsic](https://github.com/majatrepsic), [python](https://github.com/majatrepsic/advent-of-code-2017)
 - [Robert Basic](https://twitter.com/robertbasic), [go](https://github.com/robertbasic/aoc2017/)
