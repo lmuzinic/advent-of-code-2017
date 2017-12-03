@@ -1,0 +1,75 @@
+<?php
+declare(strict_types=1);
+
+namespace AdventOfCode\Year2017\Tests;
+
+use AdventOfCode\Bootstrap\Day;
+use AdventOfCode\Year2017\Three;
+use PHPUnit\Framework\TestCase;
+
+class ThreeTest extends TestCase
+{
+    private const INPUT = '265149';
+
+    /**
+     * @var Day
+     */
+    private $day;
+
+    public function setUp()
+    {
+        $this->day = new Three();
+    }
+
+    /**
+     * @doesNotPerformAssertions
+     */
+    public function testDayThreeFirstPuzzle()
+    {
+        echo $this->day->firstPuzzle(self::INPUT);
+    }
+
+    /**
+     * @doesNotPerformAssertions
+     */
+    public function testDayThreeSecondPuzzle()
+    {
+        echo $this->day->secondPuzzle(self::INPUT);
+    }
+
+    /**
+     * @dataProvider firstPartSampleData
+     */
+    public function testDayThreeFirstPartWithSampleData($input, $expectedSolution)
+    {
+        $actualSolution = $this->day->firstPuzzle($input);
+
+        $this->assertEquals($expectedSolution, $actualSolution);
+    }
+
+    /**
+     * @dataProvider secondPartSampleData
+     */
+    public function testDayThreeSecondPartWithSampleData($input, $expectedSolution)
+    {
+        $actualSolution = $this->day->secondPuzzle($input);
+
+        $this->assertEquals($expectedSolution, $actualSolution);
+    }
+
+    public function firstPartSampleData()
+    {
+        return [
+            ["1", 0],
+            ["12", 3],
+            ["23", 2],
+            ["1024", 31],
+        ];
+    }
+
+    public function secondPartSampleData()
+    {
+        return [
+        ];
+    }
+}
