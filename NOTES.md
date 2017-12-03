@@ -14,3 +14,14 @@ In that case, checking can even easier `$input[$position] === $input[$position -
 ## Day 2
 Ugh, loop inside loop. Haven't seen those since high school. Anyways, moved it in the separate method to benefit from early return when divisible is found.
 Starting second loop from next index position so to avoid checking item on itself.
+
+## Day 3
+First thought after reading puzzle text was "This escalated rather quickly".
+Realised that lower right corners are always `pow($squareBase, 2);` and then it was just a matter of growing numbers until I reach square where my memory location is.
+The number of those squares equals half of my Manhattan distance and other half is distance of that memory location to middle side element.
+
+As much as I've simplified the first part, that did not help me at all when numbers are non linear. Tried for ages to figure out how they grow and to shove them into one dimensional array somehow.
+Ended up with building a 2D plane walker and simulating movement, turns and counting adjacent.
+
+All in all, fun, but left me somewhat scared of Day 4. 
+
