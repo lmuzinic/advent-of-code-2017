@@ -70,6 +70,17 @@ class ThreeTest extends TestCase
     public function secondPartSampleData()
     {
         return [
+            ["2", 4],
+            ["4", 5],
+            ["5", 10],
+            ["10", 11],
+            ["11", 23],
+            ["23", 25],
+            ["25", 26],
+            ["26", 54],
+            ["54", 57],
+            ["57", 59],
+            ["59", 122],
         ];
     }
 }

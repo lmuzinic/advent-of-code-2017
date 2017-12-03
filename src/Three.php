@@ -58,7 +58,102 @@ class Three implements Day
         return abs($arithmeticMean - $point);
     }
 
+    private $compass = [
+        [1, 0],
+        [0, 1],
+        [-1, 0],
+        [0, -1],
+    ];
+
+    private $orientation = 1;
+    private $location = [0, 0];
+
+    private $matrix;
+
+    private function turnLeft()
+    {
+        $this->orientation -= 1;
+
+        if ($this->orientation === -1) {
+            $this->orientation = 3;
+        }
+    }
+
+    private function move()
+    {
+        $this->location[0] += 1 * $this->compass[$this->orientation][0];
+        $this->location[1] += 1 * $this->compass[$this->orientation][1];
+    }
+
+    private function sumAdjacentLocations()
+    {
+        $sum = 0;
+        $locations = [
+            [1,0],
+            [1,1],
+            [1,-1],
+            [0,1],
+            [0,-1],
+            [-1,0],
+            [-1,1],
+            [-1,-1],
+        ];
+
+        foreach ($locations as $location) {
+            $sum += $this->locationValue(
+                $this->location[0] + $location[0],
+                $this->location[1] + $location[1]
+            );
+        }
+
+        return $sum;
+    }
+
+    private function locationValue($x, $y)
+    {
+        if (isset($this->matrix[$x][$y])) {
+            return $this->matrix[$x][$y];
+        }
+
+        return 0;
+    }
+
+    private function putValue($value)
+    {
+        $this->matrix[$this->location[0]][$this->location[1]] = $value;
+    }
+
+    private function getValue()
+    {
+        return $this->matrix[$this->location[0]][$this->location[1]];
+    }
+
     public function secondPuzzle(string $input)
     {
+        $this->putValue(1);
+
+        $sideLength = 1;
+        $turns = 0;
+        $i = 1;
+        while(true) {
+            $this->move();
+            $this->putValue($this->sumAdjacentLocations());
+
+            if ($i % $sideLength === 0) {
+                $this->turnLeft();
+                $turns += 1;
+            }
+
+            if ($turns === 2) {
+                $sideLength += 1;
+                $turns = 0;
+            }
+
+            if ($this->getValue() > $input) {
+                return $this->getValue();
+            }
+
+            $i += 1;
+        }
     }
 }
