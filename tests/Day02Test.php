@@ -4,10 +4,10 @@ declare(strict_types=1);
 namespace AdventOfCode\Year2017\Tests;
 
 use AdventOfCode\Bootstrap\Day;
-use AdventOfCode\Year2017\Two;
+use AdventOfCode\Year2017\Day02;
 use PHPUnit\Framework\TestCase;
 
-class TwoTest extends TestCase
+class Day02Test extends TestCase
 {
     private const INPUT = <<<INPUT
 5806	6444	1281	38	267	1835	223	4912	5995	230	4395	2986	6048	4719	216	1201
@@ -36,7 +36,7 @@ INPUT;
 
     public function setUp()
     {
-        $this->day = new Two();
+        $this->day = new Day02();
     }
 
     /**

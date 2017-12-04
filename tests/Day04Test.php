@@ -4,10 +4,10 @@ declare(strict_types=1);
 namespace AdventOfCode\Year2017\Tests;
 
 use AdventOfCode\Bootstrap\Day;
-use AdventOfCode\Year2017\Four;
+use AdventOfCode\Year2017\Day04;
 use PHPUnit\Framework\TestCase;
 
-class FourTest extends TestCase
+class Day04Test extends TestCase
 {
     private const INPUT = <<<INPUT
 nyot babgr babgr kqtu kqtu kzshonp ylyk psqk
@@ -525,13 +525,13 @@ inc mpys mzqmcwx vryz ibqrzc pmsy fat rojpxwy rcbqzi gjef
 INPUT;
 
     /**
-     * @var Four
+     * @var Day04
      */
     private $day;
 
     public function setUp()
     {
-        $this->day = new Four();
+        $this->day = new Day04();
     }
 
     /**

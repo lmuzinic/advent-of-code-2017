@@ -7,7 +7,7 @@ namespace AdventOfCode\Year2017;
 
 use AdventOfCode\Bootstrap\Day;
 
-class Four implements Day
+class Day04 implements Day
 {
     public function firstPuzzle(string $input)
     {
