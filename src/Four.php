@@ -50,38 +50,23 @@ class Four implements Day
         return $numValidPassPhrases;
     }
 
-    function permute($items, $perms = []) {
-        if (empty($items)) {
-            $this->permutations[implode('', $perms)] = true;
-        } else {
-            for ($i = count($items) - 1; $i >= 0; --$i) {
-                $newitems = $items;
-                $newperms = $perms;
-                list($foo) = array_splice($newitems, $i, 1);
-                array_unshift($newperms, $foo);
-                $this->permute($newitems, $newperms);
-            }
-        }
-    }
-
     public function extraValidPassPhrase(string $input)
     {
-        $words = explode(" ", $input);
+        $originalWords = explode(" ", $input);
 
-        $numWords = count($words);
+        $sortedWords = $originalWords;
+        array_walk($sortedWords, function (&$word) {
+            $word = str_split($word);
+            asort($word);
+            $word = implode("", $word);
+        });
 
-        for ($i = 0; $i < $numWords; $i += 1) {
-            $this->permutations = [];
-            $this->permute(str_split($words[$i]));
-            unset($this->permutations[$words[$i]]);
+        $sortedKeyWords = array_flip($sortedWords);
 
-            foreach ($words as $word) {
-                if (array_key_exists($word, $this->permutations)) {
-                    return false;
-                }
-            }
+        if (count($originalWords) === count($sortedKeyWords)) {
+            return true;
         }
 
-        return true;
+        return false;
     }
 }
