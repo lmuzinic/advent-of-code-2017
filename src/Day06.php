@@ -37,7 +37,7 @@ class Day06 implements Day
 
             $memoryBanks[$location] = 0;
             while ($banksForDistribution > 0) {
-                $location = ++$location % $totalMemoryBanks;
+                $location = ($location + 1) % $totalMemoryBanks;
                 $memoryBanks[$location] += 1;
                 $banksForDistribution -= 1;
             }
