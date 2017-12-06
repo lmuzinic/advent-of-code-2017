@@ -23,5 +23,14 @@ The number of those squares equals half of my Manhattan distance and other half 
 As much as I've simplified the first part, that did not help me at all when numbers are non linear. Tried for ages to figure out how they grow and to shove them into one dimensional array somehow.
 Ended up with building a 2D plane walker and simulating movement, turns and counting adjacent.
 
-All in all, fun, but left me somewhat scared of Day 4. 
+All in all, fun, but left me somewhat scared of Day 4.
+
+## Day 4
+I used a cool trick here with `array_flip` - by switching values to keys, non-unique ones will disappear.
+
+For the second part, I took a really bad route. Really bad. Generating all the permutations was not needed. It was enough
+just to sort letters in each word and then do the same trick from first puzzle.
+
+## Day 5
+This was relatively easy, glad to be doing it in a language that supports directly addressing each element.
 
