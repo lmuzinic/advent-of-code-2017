@@ -36,4 +36,6 @@ This was relatively easy, glad to be doing it in a language that supports direct
 
 ## Day 6
 Mentioning few gotchas for both puzzles as they are based on same code. Storing string representation of state and counting occurrences made loop condition much simpler.
-Circular motion achieved by `$location = ++$location % $totalMemoryBanks`;
+Circular motion achieved by `$location = ++$location % $totalMemoryBanks`.
+
+I did not think about possible collisions when picking `$seenState` keys. Thanks to discussion with Robert I got to add a case when it happens and update my code. 
