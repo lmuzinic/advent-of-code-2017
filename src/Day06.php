@@ -28,7 +28,7 @@ class Day06 implements Day
         $totalMemoryBanks = count($memoryBanks);
 
         $cycles = 0;
-        $state = implode("", $memoryBanks);
+        $state = implode("-", $memoryBanks);
         $seenStates[$state] = 1;
         while ($seenStates[$state] < ($occurrences + 1)) {
             $cycles += 1;
@@ -42,7 +42,7 @@ class Day06 implements Day
                 $banksForDistribution -= 1;
             }
 
-            $state = implode("", $memoryBanks);
+            $state = implode("-", $memoryBanks);
             if (isset($seenStates[$state])) {
                 $seenStates[$state] += 1;
             } else {

@@ -60,14 +60,16 @@ class Day06Test extends TestCase
     public function firstPartSampleData()
     {
         return [
-            ["0\t2\t7\t0", 5]
+            ["0\t2\t7\t0", 5],
+            ["4\t10\t4\t1\t8\t4\t9\t14\t5\t1\t14\t15\t0\t15\t3\t5", 12841],
         ];
     }
 
     public function secondPartSampleData()
     {
         return [
-            ["0\t2\t7\t0", 4]
+            ["0\t2\t7\t0", 4],
+            ["4\t10\t4\t1\t8\t4\t9\t14\t5\t1\t14\t15\t0\t15\t3\t5", 8038],
         ];
     }
 }
