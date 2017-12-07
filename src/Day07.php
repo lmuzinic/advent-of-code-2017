@@ -77,10 +77,8 @@ class Day07 implements Day
     private function walk($nodeName)
     {
         $weights = [];
-        $counterWeights = [];
         foreach ($this->discsMap[$nodeName]->getChildren() as $node) {
             $weights[$node->getChildrenWeight()][] = $node->getName();
-            $counterWeights[$node->getName()][] = $node->getChildrenWeight();
         }
 
         if (count($weights) === 2) {
