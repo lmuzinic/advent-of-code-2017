@@ -9,8 +9,7 @@ use AdventOfCode\Bootstrap\Day;
 
 class Day07 implements Day
 {
-    private const REGEX_MULTIPLE = '/(^\w*)\s\((\d*)\)\s->\s([a-z, ]*)/';
-    private const REGEX_SINGLE = '/(^\w*)\s\((\d*)\)/';
+    private const REGEX_MATCH = '/(^\w*)\s\((\d*)\)(\s->\s([a-z, ]*))?/';
 
     /**
      * @var Disc[]
@@ -90,15 +89,13 @@ class Day07 implements Day
 
     public function regexMatch(string $input)
     {
-        if (!preg_match(self::REGEX_MULTIPLE, $input, $matches)) {
-            preg_match(self::REGEX_SINGLE, $input, $matches);
+        preg_match(self::REGEX_MATCH, $input, $matches);
+
+        if (isset($matches[4])) {
+            $matches[4] = explode(", ", $matches[4]);
         }
 
-        if (isset($matches[3])) {
-            $matches[3] = explode(", ", $matches[3]);
-        }
-
-        unset($matches[0]);
+        unset($matches[0], $matches[3]);
 
         return array_values($matches);
     }
