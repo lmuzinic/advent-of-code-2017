@@ -39,3 +39,11 @@ Mentioning few gotchas for both puzzles as they are based on same code. Storing 
 Circular motion achieved by `$location = ++$location % $totalMemoryBanks`.
 
 I did not think about possible collisions when picking `$seenState` keys. Thanks to discussion with Robert I got to add a case when it happens and update my code. 
+
+## Day 7
+Code structures are getting more complex as days go by. PHP doesn't have a tree data structure built in (even in SPL) so it was either using something off packagist or building one. 
+I [opted for latter](src/Disc.php) as this is learning :). Also, as I did not want to traverse through the tree there is a `$discsMap` property so I can access them by name.
+
+There is also a small singleton factory inside `getNode` method - retrieving Disc by name will either get one that was previously created or create new one and return it.   
+
+As I rarely need to write regex, took some time to play with them as well. 
