@@ -47,3 +47,7 @@ I [opted for latter](src/Disc.php) as this is learning :). Also, as I did not wa
 There is also a small singleton factory inside `getNode` method - retrieving Disc by name will either get one that was previously created or create new one and return it.   
 
 As I rarely need to write regex, took some time to play with them as well. 
+
+## Day 8
+Few things that helped me. Creating a separate method for parsing input lines. Having a associative array is much more meaningful than indexed one.
+Second thing was setting registers, so there is no need to worry about them later on. Last, but not least, built in `max` function.
