@@ -42,14 +42,6 @@ class Disc
     }
 
     /**
-     * @param string $name
-     */
-    public function setName(string $name): void
-    {
-        $this->name = $name;
-    }
-
-    /**
      * @return int
      */
     public function getWeight()
@@ -76,14 +68,6 @@ class Disc
     }
 
     /**
-     * @return Disc
-     */
-    public function getParent(): Disc
-    {
-        return $this->parent;
-    }
-
-    /**
      * @return bool
      */
     public function hasParent(): bool
@@ -105,18 +89,6 @@ class Disc
     public function getChildren(): array
     {
         return $this->children;
-    }
-
-    /**
-     * @return bool
-     */
-    public function hasChildren(): bool
-    {
-        if (count($this->children) > 0) {
-            return true;
-        }
-
-        return false;
     }
 
     /**
