@@ -536,6 +536,7 @@ INPUT;
 
     /**
      * @doesNotPerformAssertions
+     * @group actual
      */
     public function testDayFourFirstPuzzle()
     {
@@ -544,6 +545,7 @@ INPUT;
 
     /**
      * @doesNotPerformAssertions
+     * @group actual
      */
     public function testDayFourSecondPuzzle()
     {
@@ -552,6 +554,7 @@ INPUT;
 
     /**
      * @dataProvider firstPartSampleData
+     * @group sample
      */
     public function testDayFourFirstPartWithSampleData($input, $expectedSolution)
     {
@@ -562,6 +565,7 @@ INPUT;
 
     /**
      * @dataProvider secondPartSampleData
+     * @group sample
      */
     public function testDayFourSecondPartWithSampleData($input, $expectedSolution)
     {

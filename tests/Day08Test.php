@@ -1030,6 +1030,7 @@ SAMPLE;
 
     /**
      * @doesNotPerformAssertions
+     * @group actual
      */
     public function testDayEightFirstPuzzle()
     {
@@ -1038,12 +1039,16 @@ SAMPLE;
 
     /**
      * @doesNotPerformAssertions
+     * @group actual
      */
     public function testDayEightSecondPuzzle()
     {
         echo $this->day->secondPuzzle(self::INPUT);
     }
 
+    /**
+     * @group sample
+     */
     public function testDayEightFirstPuzzleWithSampleData()
     {
         $actualMatch = $this->day->firstPuzzle(self::SAMPLE);
@@ -1051,6 +1056,9 @@ SAMPLE;
         $this->assertEquals(1, $actualMatch);
     }
 
+    /**
+     * @group sample
+     */
     public function testDayEightSecondPuzzleWithSampleData()
     {
         $actualMatch = $this->day->secondPuzzle(self::SAMPLE);

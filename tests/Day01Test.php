@@ -23,6 +23,7 @@ class Day01Test extends TestCase
 
     /**
      * @doesNotPerformAssertions
+     * @group actual
      */
     public function testDayOneFirstPuzzle()
     {
@@ -31,6 +32,7 @@ class Day01Test extends TestCase
 
     /**
      * @doesNotPerformAssertions
+     * @group actual
      */
     public function testDayOneSecondPuzzle()
     {
@@ -39,6 +41,7 @@ class Day01Test extends TestCase
 
     /**
      * @dataProvider firstPartSampleData
+     * @group sample
      */
     public function testDayOneFirstPartWithSampleData($input, $expectedSolution)
     {
@@ -49,6 +52,7 @@ class Day01Test extends TestCase
 
     /**
      * @dataProvider secondPartSampleData
+     * @group sample
      */
     public function testDayOneSecondPartWithSampleData($input, $expectedSolution)
     {

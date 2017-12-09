@@ -1334,6 +1334,9 @@ SAMPLE;
         echo $this->day->secondPuzzle(self::INPUT);
     }
 
+    /**
+     * @group sample
+     */
     public function testDaySevenFirstPuzzleWithSampleData()
     {
         $actualMatch = $this->day->firstPuzzle(self::SAMPLE);
@@ -1341,6 +1344,9 @@ SAMPLE;
         $this->assertEquals('tknk', $actualMatch);
     }
 
+    /**
+     * @group sample
+     */
     public function testDaySevenSecondPuzzleWithSampleData()
     {
         $actualMatch = $this->day->secondPuzzle(self::SAMPLE);
@@ -1350,6 +1356,7 @@ SAMPLE;
 
     /**
      * @dataProvider regexSampleData
+     * @group sample
      */
     public function testRegexMatcher($input, $expectedMatch)
     {
