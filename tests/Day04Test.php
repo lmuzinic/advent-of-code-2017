@@ -9,6 +9,20 @@ use PHPUnit\Framework\TestCase;
 
 class Day04Test extends TestCase
 {
+    private const SAMPLE_FIRST = [
+        ["aa bb cc dd ee", true],
+        ["aa bb cc dd aa", false],
+        ["aa bb cc dd aaa", true],
+    ];
+
+    private const SAMPLE_SECOND = [
+        ["abcde fghij", true],
+        ["abcde xyz ecdab", false],
+        ["a ab abc abd abf abj", true],
+        ["iiii oiii ooii oooi oooo", true],
+        ["oiii ioii iioi iiio", false],
+    ];
+
     /**
      * @var Day04
      */
@@ -38,10 +52,30 @@ class Day04Test extends TestCase
     }
 
     /**
+     * @group sample
+     */
+    public function testDayFourFirstPartWithSampleData()
+    {
+        $actualSolution = $this->day->firstPuzzle(implode("\n", array_column(self::SAMPLE_FIRST, 0)));
+
+        $this->assertEquals(2, $actualSolution);
+    }
+
+    /**
+     * @group sample
+     */
+    public function testDayFourSecondPartWithSampleData()
+    {
+        $actualSolution = $this->day->secondPuzzle(implode("\n", array_column(self::SAMPLE_SECOND, 0)));
+
+        $this->assertEquals(3, $actualSolution);
+    }
+
+    /**
      * @dataProvider firstPartSampleData
      * @group sample
      */
-    public function testDayFourFirstPartWithSampleData($input, $expectedSolution)
+    public function testValidPassPhrase($input, $expectedSolution)
     {
         $actualSolution = $this->day->validPassPhrase($input);
 
@@ -52,7 +86,7 @@ class Day04Test extends TestCase
      * @dataProvider secondPartSampleData
      * @group sample
      */
-    public function testDayFourSecondPartWithSampleData($input, $expectedSolution)
+    public function testExtraValidPassPhrase($input, $expectedSolution)
     {
         $actualSolution = $this->day->extraValidPassPhrase($input);
 
@@ -61,21 +95,11 @@ class Day04Test extends TestCase
 
     public function firstPartSampleData()
     {
-        return [
-            ["aa bb cc dd ee", true],
-            ["aa bb cc dd aa", false],
-            ["aa bb cc dd aaa", true],
-        ];
+        return self::SAMPLE_FIRST;
     }
 
     public function secondPartSampleData()
     {
-        return [
-            ["abcde fghij", true],
-            ["abcde xyz ecdab", false],
-            ["a ab abc abd abf abj", true],
-            ["iiii oiii ooii oooi oooo", true],
-            ["oiii ioii iioi iiio", false],
-        ];
+        return self::SAMPLE_SECOND;
     }
 }
