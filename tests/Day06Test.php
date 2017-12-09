@@ -9,8 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 class Day06Test extends TestCase
 {
-    private const INPUT = "0	5	10	0	11	14	13	4	11	8	8	7	1	4	12	11";
-
     /**
      * @var Day06
      */
@@ -27,7 +25,7 @@ class Day06Test extends TestCase
      */
     public function testDaySixFirstPuzzle()
     {
-        echo $this->day->firstPuzzle(self::INPUT);
+        echo $this->day->firstPuzzle(Input::Day06);
     }
 
     /**
@@ -36,7 +34,7 @@ class Day06Test extends TestCase
      */
     public function testDaySixSecondPuzzle()
     {
-        echo $this->day->secondPuzzle(self::INPUT);
+        echo $this->day->secondPuzzle(Input::Day06);
     }
 
     /**
