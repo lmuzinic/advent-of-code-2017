@@ -29,7 +29,8 @@ class Day09 implements Day
                     $this->startGroup();
                     break;
                 case '}':
-                    $score += $this->stopGroup();
+                    $score += $this->getGroupSize();
+                    $this->stopGroup();
                     break;
                 case '!':
                     $position += 1;
@@ -51,8 +52,13 @@ class Day09 implements Day
     {
         if (!$this->isGarbage) {
             array_pop($this->groupStack);
+        }
+    }
 
-            return count($this->groupStack) + 1;
+    private function getGroupSize()
+    {
+        if (!$this->isGarbage) {
+            return count($this->groupStack);
         }
 
         return 0;
