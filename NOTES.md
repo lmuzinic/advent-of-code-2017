@@ -51,3 +51,8 @@ As I rarely need to write regex, took some time to play with them as well.
 ## Day 8
 Few things that helped me. Creating a separate method for parsing input lines. Having a associative array is much more meaningful than indexed one.
 Second thing was setting registers, so there is no need to worry about them later on. Last, but not least, built in `max` function.
+
+## Day 9
+When I read groups I immediately thought stacks. My initial solution for first puzzle also included stack for garbage as I thought it would be used in second part. Lesson learned here.
+
+Also, my sample tests passed, but my final solution did not. Problem was in samples, each contains only one garbage group. That was fixed by adding `['<{o"i!a,<{i<a><{o"i!a,<{i<a>', 20],` to samples and then fixing code to decrement garbage count on each `>` as well.
