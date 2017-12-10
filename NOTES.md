@@ -56,3 +56,31 @@ Second thing was setting registers, so there is no need to worry about them late
 When I read groups I immediately thought stacks. My initial solution for first puzzle also included stack for garbage as I thought it would be used in second part. Lesson learned here.
 
 Also, my sample tests passed, but my final solution did not. Problem was in samples, each contains only one garbage group. That was fixed by adding `['<{o"i!a,<{i<a><{o"i!a,<{i<a>', 20],` to samples and then fixing code to decrement garbage count on each `>` as well.
+
+## Day 10
+Aaaah, so that's how hashes work. Never looked under the hood, let alone code one from scratch. Cool.
+The trick with making array as circular structure from Day 1 proves to be a theme for me. Used it again. 
+
+There was one requirement in second puzzle that said
+> run a total of 64 rounds
+
+and it got me thinking what would be the best way to write it - what would make it immediately clear?
+
+First take was simple for loop.
+````php
+for ($i = 0; $i < 64; $i += 1) {
+````
+This is probably something that most are used to seeing, but some people find it confusing. Does it run 64 times, or 65? Is 64 included? You have to look at first expression and exact comparison operator in second one to really understand what is going on.
+
+Second take was foreach loop with range.    
+````php
+foreach (range(1, 64) as $i) {
+````
+Slightly better at readability, although still not immediately clear how many times it will run and with `$i` being unused one could wander there is a bug in that code. Also, slight performance penalty for creating an array.
+
+In the end, I've decided for while loop. 
+````php
+$repeat = 64;
+while ($repeat--) {
+````
+There is just one value and it tells you what it does, no confusion about boundaries.  
