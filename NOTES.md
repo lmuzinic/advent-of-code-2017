@@ -84,3 +84,12 @@ $repeat = 64;
 while ($repeat--) {
 ````
 There is just one value and it tells you what it does, no confusion about boundaries.  
+
+## Day 11
+Hexawhatnow? I decided it is time to google and first learn about hexagon grids. Few years back I read one blog that explained them perfectly so I looked it up. It says
+>  I’ve been collecting hex grid resources for nearly 20 years
+ 
+How hexy is that? [Check it out](https://www.redblobgames.com/grids/hexagons/).
+
+Decided to go with cube coordinate system, as it makes moving logic much cleaner - no need to check where you are in order to know where to move (which is not the case with offset coordinates) and 
+distance (or steps in our example) is just a max absolute value of axis (as our starting distance is [0, 0, 0]).
