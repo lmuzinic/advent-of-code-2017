@@ -93,3 +93,21 @@ How hexy is that? [Check it out](https://www.redblobgames.com/grids/hexagons/).
 
 Decided to go with cube coordinate system, as it makes moving logic much cleaner - no need to check where you are in order to know where to move (which is not the case with offset coordinates) and 
 distance (or steps in our example) is just a max absolute value of axis (as our starting distance is [0, 0, 0]).
+
+## Day 12
+Slow. Slow. Slow. Produced extra slow code. Not proud, will revisit this one.
+
+## Day 13
+Another fun day. Got logic setup nicely, created Scanner object, ticks logic in place, tests on sample inputs are green and then it fails miserably on actual input.
+How miserably? 
+
+> Time: 36.74 minutes, Memory: 6.00MB
+
+Thirtysix minutes miserably.
+
+Dropped my nice logic, dropped Scanner object, removed ticks, started doing calculation for whole room/scanners including depth to minimize overhead as much as possible.
+End result?
+
+> Time: 28.4 seconds, Memory: 6.00MB
+
+Tolerable. 
