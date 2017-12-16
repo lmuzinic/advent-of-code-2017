@@ -111,3 +111,10 @@ End result?
 > Time: 28.4 seconds, Memory: 6.00MB
 
 Tolerable. 
+
+## Day 14
+My knot hash function has a bug. Guess it was pure luck to get a correct solution for Day 10. Oh well, will revisit this one.
+
+## Day 15
+Haven't used coroutines in this year's Advent of Code, so here was my chance. It is very easy to go from generators (commonly used in `foreach`, being Iterators after all) to coroutines.
+Think of them as a way to talk to generator - instead of just retrieving values from them you can also [send](http://php.net/manual/en/generator.send.php) values into generators.  

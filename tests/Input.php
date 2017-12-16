@@ -7,6 +7,7 @@ namespace AdventOfCode\Year2017\Tests;
 
 class Input
 {
+    public const Day15 = '512,191';
     public const Day13 = <<<DAY13
 0: 4
 1: 2
