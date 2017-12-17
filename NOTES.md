@@ -118,3 +118,10 @@ My knot hash function has a bug. Guess it was pure luck to get a correct solutio
 ## Day 15
 Haven't used coroutines in this year's Advent of Code, so here was my chance. It is very easy to go from generators (commonly used in `foreach`, being Iterators after all) to coroutines.
 Think of them as a way to talk to generator - instead of just retrieving values from them you can also [send](http://php.net/manual/en/generator.send.php) values into generators.  
+
+## Day 16
+Again used the fact that PHP can handle strings as arrays, so doing the exchange was easy, doing the spin is just concatenating two pieces and partner is just search and exchange.
+
+Big number of repeats was a slight giveaway into the fact that they must be repeating after some cycles. So I just recorded their end state, and after finding it, moved the counter to nth iteration before 1000000000.
+
+Slightly disappointed that puzzle did not include final state (just second cycle) so I was not able to write a test for that first.
