@@ -125,3 +125,6 @@ Again used the fact that PHP can handle strings as arrays, so doing the exchange
 Big number of repeats was a slight giveaway into the fact that they must be repeating after some cycles. So I just recorded their end state, and after finding it, moved the counter to nth iteration before 1000000000.
 
 Slightly disappointed that puzzle did not include final state (just second cycle) so I was not able to write a test for that first.
+
+## Day 17
+Growl. Again without the tests for second puzzle. Growl.
