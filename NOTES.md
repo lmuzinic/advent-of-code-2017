@@ -128,3 +128,23 @@ Slightly disappointed that puzzle did not include final state (just second cycle
 
 ## Day 17
 Growl. Again without the tests for second puzzle. Growl.
+
+## Day 18
+TBD
+
+## Day 19
+Reused much of of Day3 for this. Only tricky part for me was deciding that to do on corners. Ended up with this.
+```php
+if ($this->read() === '+') {
+    $this->turn();
+
+    if (!$this->continue()) {
+        $this->turn();
+        $this->turn();
+    }
+
+    $this->move();
+    continue;
+}
+``` 
+As I decided to only implement one turn direction my first idea was to just turn in loop until you can continue. Embarrassingly, it resulted going back (180 degrees turn) sometimes. That is why you do double turn (to add up to 270 degrees) if just one is not enough. 
