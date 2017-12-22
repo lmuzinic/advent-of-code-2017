@@ -148,3 +148,9 @@ if ($this->read() === '+') {
 }
 ``` 
 As I decided to only implement one turn direction my first idea was to just turn in loop until you can continue. Embarrassingly, it resulted going back (180 degrees turn) sometimes. That is why you do double turn (to add up to 270 degrees) if just one is not enough. 
+
+## Day 20
+Decided to create my Particle as an object, was much easier to visualise what is happening. For part 1, I decided to take a big number (big being 1000 here) calculate all distances and pick the smallest. 
+My initial idea was to just look at accelerations as they have the biggest impact on distance after some time but could not get the math straight.
+
+Part _deux_ was a bit tougher cookie, I've struggled with tick formula as what I remembered from physics did not cause any collisions. Go figure.
